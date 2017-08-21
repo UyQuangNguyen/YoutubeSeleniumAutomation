@@ -15,6 +15,7 @@ import static java.lang.Thread.sleep;
 public class Core {
     // Will always run first for tests that requires user to be signed in.
     // Future goal is also to make driver global, so that we can grab it from anywhere ;)
+
     @BeforeMethod(alwaysRun = true)
     public void basicWebclientSetup() {
         //Set environment blabla, to be featured later
@@ -37,17 +38,21 @@ public class Core {
             inputFormEmail.sendKeys(name);
             inputFormEmail.sendKeys(Keys.RETURN);
 
-            // Input the password, will implement webdriverwait in the future.
 
+        // Input the password, will implement webdriverwait in the future.
         try {
             sleep(1000);
         } catch(InterruptedException e) {
             System.out.println("gon wait");
         }
+
             WebElement inputFormPassword = driver.findElement(By.cssSelector("input[type='password']"));
             inputFormPassword.sendKeys(pass);
             inputFormPassword.sendKeys(Keys.RETURN);
 
+            // Attempts to find upload button, which is what should be on the screen when logged in.
+            // Might sometimes fail due to youtube changing to the new design..
+            driver.findElement(By.cssSelector("span.yt-uix-button-icon-material-upload"));
 
     }
 
