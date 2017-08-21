@@ -1,15 +1,12 @@
 package Website.Tests.AfterRegistrationTests;
 
+import Global.Core;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-public class PlaylistTests {
+public class PlaylistTests extends Core {
 
-    @BeforeMethod(alwaysRun = true)
-    public void basicWebclientSetup() {
-        System.out.println("this runs before the others yes yes");
-    }
 
     @Test
     public void testGoogleSearch() {
