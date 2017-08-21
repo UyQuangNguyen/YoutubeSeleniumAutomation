@@ -8,6 +8,7 @@ public class Core {
     public void basicWebclientSetup() {
         System.out.println("this runs before the others yes yes");
         System.out.println("Better feature");
+        System.out.println("Even better feature");
     }
 
 }
