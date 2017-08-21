@@ -6,12 +6,12 @@ public class SignInAndSignOut {
     @Test
     public void firstTestCase()
     {
-        System.out.println("im in first test case from demoOne Class");
+        System.out.println("I'm in first test case from SignInAndSignOut class.");
     }
 
     @Test
     public void secondTestCase()
     {
-        System.out.println("im in second test case from demoOne Class");
+        System.out.println("I'm in second test case from SignInAndSignOut class.");
     }
 }
