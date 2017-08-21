@@ -25,7 +25,7 @@ public class Core {
     public void setupLogin(String name, String pass) {
             // Optional, if not specified, WebDriver will search your path for chromedriver.
             WebDriver driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(WebsiteConstants.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
             driver.get("https://www.youtube.com");
 
             // Currently using xPath because youtube has no consistent jss css that we can use for cssSelector.
