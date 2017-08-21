@@ -1,4 +1,4 @@
-package Global.Website.Tests.LoginLogoutTests;
+package Website.Tests.LoginLogoutTests;
 import org.testng.annotations.Test;
 
 
