@@ -7,12 +7,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
 
 public class WebsiteCore extends Core {
+
+
     @BeforeMethod(alwaysRun = true)
     public void basicWebclientSetup() {
         //Set environment blabla, to be featured later

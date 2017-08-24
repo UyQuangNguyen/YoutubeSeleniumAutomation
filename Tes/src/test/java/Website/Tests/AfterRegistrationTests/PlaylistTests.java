@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class PlaylistTests extends WebsiteCore {
 
-    @Test
+    @Test(groups = {"functest", "smoke"})
     public void AddToPlaylist() {
         System.out.println("abcdefg");
 

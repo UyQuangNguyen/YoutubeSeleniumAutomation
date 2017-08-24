@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Smoke tests" configfailurepolicy="continue" parallel="tests" thread-count="9">
+    <test name="test1">
+
+        <groups>
+            <run>
+                <include name="functest" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+
+    </test>
+    <test name="test2">
+
+        <groups>
+            <run>
+                <include name="functest" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+
+    </test>
+    <test name="test3">
+
+        <groups>
+            <run>
+                <include name="functest" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+
+    </test>
+    <test name="test5">
+
+        <groups>
+            <run>
+                <include name="functest" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+
+    </test>
+    <test name="test4">
+
+        <groups>
+            <run>
+                <include name="functest" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+
+    </test>
+    <test name="test6">
+
+        <groups>
+            <run>
+                <include name="functest" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+
+    </test>
+    <test name="test7">
+
+        <groups>
+            <run>
+                <include name="functest" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+
+    </test>
+</suite>
