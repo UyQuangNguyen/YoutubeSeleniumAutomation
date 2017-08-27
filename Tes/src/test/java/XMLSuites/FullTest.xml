@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Smoke tests" configfailurepolicy="continue" parallel="tests" thread-count="16">
+
+    <test name="smokeAfterReg1">
+        <groups>
+            <run>
+                <include name="smokeAfterReg" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+    </test>
+
+    <test name="smokeAfterReg2">
+        <groups>
+            <run>
+                <include name="smokeAfterReg" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+    </test>
+
+
+    <test name="smokeBeforeReg1">
+        <groups>
+            <run>
+                <include name="smokeBeforeReg" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+    </test>
+
+    <test name="smokeBeforeReg2">
+        <groups>
+            <run>
+                <include name="smokeBeforeReg" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+        </classes>
+    </test>
+
+</suite>
