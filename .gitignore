@@ -1,0 +1,12 @@
+.idea/compiler.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/YoutubeSeleniumAutomation.iml
+Tes/Tes.iml
+Tes/target/allure-results/b8f272b3-67b3-46d1-90d4-69236fde61bf-testsuite.xml
+Tes/target/test-classes/Global/Core.class
+Tes/target/test-classes/Website/Tests/AfterRegistrationTests/PlaylistTests.class
+Tes/target/test-classes/Website/Tests/LoginLogoutTests/SignInAndSignOut.class
+*.class
