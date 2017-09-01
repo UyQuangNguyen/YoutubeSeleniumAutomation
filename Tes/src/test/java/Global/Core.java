@@ -2,6 +2,7 @@ package Global;
 import Website.WebsiteConstants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
@@ -44,5 +45,13 @@ public class Core {
         return threadDriver.get();
     }
 
+    @AfterMethod
+    public void tearDown() // Close browser after tests are done so I'm not left with 40000 browsers.
+    {
+        getDriver().quit();
     }
+
+    }
+
+
 

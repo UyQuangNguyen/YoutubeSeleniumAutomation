@@ -31,7 +31,7 @@ public class GeneralAppearance extends WebsiteCore {
         LeftMenu.navigate(LeftMenu.LeftMenuButton.MUSIC);
         LeftMenu.navigate(LeftMenu.LeftMenuButton.SPORTS);
         LeftMenu.navigate(LeftMenu.LeftMenuButton.GAMING);
-        LeftMenu.navigate(LeftMenu.LeftMenuButton.MOVIES);
+        LeftMenu.navigate(LeftMenu.LeftMenuButton.FILMS);
         LeftMenu.navigate(LeftMenu.LeftMenuButton.NEWS);
         LeftMenu.navigate(LeftMenu.LeftMenuButton.LIVE);
         LeftMenu.navigate(LeftMenu.LeftMenuButton.VIDEOS);

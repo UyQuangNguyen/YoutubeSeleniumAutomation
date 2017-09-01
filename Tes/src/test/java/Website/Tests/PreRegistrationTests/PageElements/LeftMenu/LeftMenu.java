@@ -10,7 +10,7 @@ import sun.java2d.loops.FillRect;
 
 public class LeftMenu extends WebsiteCore{
     // Unfortunately, by the way youtube is set up, we can only use xPath instead of css selectors for this menu
-    public enum LeftMenuButton {HOME, TRENDING, HISTORY, MUSIC, SPORTS, GAMING, MOVIES, NEWS, LIVE, VIDEOS}
+    public enum LeftMenuButton {HOME, TRENDING, HISTORY, MUSIC, SPORTS, GAMING, FILMS, NEWS, LIVE, VIDEOS}
 
     @Override
     public void basicWebclientSetup() {
@@ -39,8 +39,8 @@ public class LeftMenu extends WebsiteCore{
             case GAMING:
                 buttonCSS = LeftMenuCSS.GAMING;
                 break;
-            case MOVIES:
-                buttonCSS = LeftMenuCSS.MOVIES;
+            case FILMS:
+                buttonCSS = LeftMenuCSS.FILMS;
                 break;
             case NEWS:
                 buttonCSS = LeftMenuCSS.NEWS;
@@ -55,7 +55,7 @@ public class LeftMenu extends WebsiteCore{
 
         try {
             GeneralMethods.clickWithXpath(buttonCSS);
-            GeneralMethods.sleep(3000);
+            GeneralMethods.sleep(2000);
 
 
         }
