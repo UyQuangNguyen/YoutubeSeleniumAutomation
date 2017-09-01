@@ -3,29 +3,6 @@
 
 <suite name="Smoke tests" configfailurepolicy="continue" parallel="tests" thread-count="16">
 
-    <test name="smokeAfterReg1">
-        <groups>
-            <run>
-                <include name="smokeAfterReg" />
-            </run>
-        </groups>
-        <classes>
-            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
-        </classes>
-    </test>
-
-    <test name="smokeAfterReg2">
-        <groups>
-            <run>
-                <include name="smokeAfterReg" />
-            </run>
-        </groups>
-        <classes>
-            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
-        </classes>
-    </test>
-
-
     <test name="smokeBeforeReg1">
         <groups>
             <run>
@@ -33,7 +10,7 @@
             </run>
         </groups>
         <classes>
-            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
         </classes>
     </test>
 
@@ -44,8 +21,43 @@
             </run>
         </groups>
         <classes>
-            <class name="Website.Tests.AfterRegistrationTests.PlaylistTests" />
+            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
         </classes>
     </test>
+
+    <test name="smokeBeforeReg3">
+        <groups>
+            <run>
+                <include name="smokeBeforeReg" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
+        </classes>
+    </test>
+
+    <test name="smokeBeforeReg4">
+        <groups>
+            <run>
+                <include name="smokeBeforeReg" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
+        </classes>
+    </test>
+
+    <test name="smokeBeforeReg5">
+        <groups>
+            <run>
+                <include name="smokeBeforeReg" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
+        </classes>
+    </test>
+
+
 
 </suite>

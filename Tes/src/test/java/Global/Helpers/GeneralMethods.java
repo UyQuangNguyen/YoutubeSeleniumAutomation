@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class GeneralMethods {
-    static WebDriver driver = Core.getDriver();
     public static void clickWithCSS(String cssSelector) {
         try {
-           // GeneralMethods.waitForPresenceOfElement(cssSelector, 10); // GeneralMethods.waitElementToBeVisible(cssSelector, 10);
+            WebDriver driver = Core.getDriver();
+            // GeneralMethods.waitForPresenceOfElement(cssSelector, 10); // GeneralMethods.waitElementToBeVisible(cssSelector, 10);
             WebElement elementToClick = driver.findElement(By.cssSelector(cssSelector));
             try {
                 //Attempts to click it
@@ -32,6 +32,7 @@ public class GeneralMethods {
 
     public static void clickWithXpath(String xpath) {
         try {
+            WebDriver driver = Core.getDriver();
             // GeneralMethods.waitForPresenceOfElement(cssSelector, 10); // GeneralMethods.waitElementToBeVisible(cssSelector, 10);
             WebElement elementToClick = driver.findElement(By.xpath(xpath));
             try {
@@ -52,6 +53,7 @@ public class GeneralMethods {
     }
 
     public static void dragAndDrop(WebElement sourceElement, WebElement destinationElement) {
+        WebDriver driver = Core.getDriver();
         if (sourceElement.isDisplayed() && destinationElement.isDisplayed()) {
             Actions action = new Actions(driver);
             action.dragAndDrop(sourceElement, destinationElement).build().perform();
@@ -62,6 +64,8 @@ public class GeneralMethods {
     }
 
     public static void dragAndDropNoWait(WebElement sourceElement, WebElement destinationElement) {
+        WebDriver driver = Core.getDriver();
+
         try {
             if (sourceElement.isDisplayed() && destinationElement.isDisplayed()) {
                 Actions action = new Actions(driver);
@@ -74,6 +78,8 @@ public class GeneralMethods {
     }
 
     public static void enterTextWithCSS(String cssValue, String text) {
+        WebDriver driver = Core.getDriver();
+
         try {
             WebElement textField = driver.findElement(By.cssSelector(cssValue));
             textField.clear();
@@ -84,6 +90,8 @@ public class GeneralMethods {
     }
 
     public static void scrollToElement(WebElement element) {
+        WebDriver driver = Core.getDriver();
+
         ((JavascriptExecutor) driver).executeScript(
                 "try{arguments[0].scrollIntoView(true);} catch(err){}", element);
     }
@@ -97,6 +105,8 @@ public class GeneralMethods {
     }
 
     public static WebElement waitElementToBeVisibleCSS(String elementCSS, int duration) {
+        WebDriver driver = Core.getDriver();
+
         try {
             return new WebDriverWait(driver, duration).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(elementCSS)));
         } catch (Exception ex) {
@@ -105,10 +115,13 @@ public class GeneralMethods {
     }
 
     public static WebElement waitForPresenceOfElementCSS(String elementCSS, int duration) {
+        WebDriver driver = Core.getDriver();
+
         return new WebDriverWait(driver, duration).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(elementCSS)));
     }
 
     public static WebElement waitForElementClickableCSS(String elementCSS, int duration) {
+        WebDriver driver = Core.getDriver();
         return new WebDriverWait(driver, duration).until(ExpectedConditions.elementToBeClickable(By.cssSelector(elementCSS)));
     }
 }

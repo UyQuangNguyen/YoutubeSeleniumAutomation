@@ -17,14 +17,14 @@ import static Website.Tests.PreRegistrationTests.PageElements.LeftMenu.LeftMenu.
 public class GeneralAppearance extends WebsiteCore {
 
     @Override
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void basicWebclientSetup() {
         WebDriver driver =  getDriver();
         driver.manage().window().setSize(new Dimension(1920,1080));
         driver.get("https://www.youtube.com");
     }
 
-    @Test
+    @Test(groups = "smokeBeforeReg")
     public void CheckIfLeftMenuClickable() {
         LeftMenu.navigate(LeftMenu.LeftMenuButton.TRENDING);
         LeftMenu.navigate(LeftMenu.LeftMenuButton.HISTORY);
