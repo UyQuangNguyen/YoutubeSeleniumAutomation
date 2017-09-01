@@ -25,39 +25,4 @@
         </classes>
     </test>
 
-    <test name="smokeBeforeReg3">
-        <groups>
-            <run>
-                <include name="smokeBeforeReg" />
-            </run>
-        </groups>
-        <classes>
-            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
-        </classes>
-    </test>
-
-    <test name="smokeBeforeReg4">
-        <groups>
-            <run>
-                <include name="smokeBeforeReg" />
-            </run>
-        </groups>
-        <classes>
-            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
-        </classes>
-    </test>
-
-    <test name="smokeBeforeReg5">
-        <groups>
-            <run>
-                <include name="smokeBeforeReg" />
-            </run>
-        </groups>
-        <classes>
-            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
-        </classes>
-    </test>
-
-
-
 </suite>

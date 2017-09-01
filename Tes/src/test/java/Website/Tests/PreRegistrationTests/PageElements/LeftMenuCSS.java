@@ -1,4 +1,4 @@
-package Website.Tests.PreRegistrationTests.PageElements.LeftMenu;
+package Website.Tests.PreRegistrationTests.PageElements;
 
 import org.openqa.selenium.TimeoutException;
 

@@ -1,4 +1,4 @@
-package Website.Tests.PreRegistrationTests.PageElements.LeftMenu;
+package Website.Tests.PreRegistrationTests.PageElements;
 
 import Global.Helpers.GeneralMethods;
 import Website.WebsiteCore;
@@ -16,7 +16,7 @@ public class LeftMenu extends WebsiteCore{
     public void basicWebclientSetup() {
     }
 
-    public static void navigate (LeftMenuButton leftMenuButton) {
+    public static boolean navigate (LeftMenuButton leftMenuButton) {
 
         String buttonCSS = null;
 
@@ -56,10 +56,11 @@ public class LeftMenu extends WebsiteCore{
         try {
             GeneralMethods.clickWithXpath(buttonCSS);
             GeneralMethods.sleep(2000);
-
+            return true;
 
         }
         catch (TimeoutException ex){
+            return false;
 
         }
     }
