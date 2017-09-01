@@ -45,7 +45,7 @@ public class Core {
         return threadDriver.get();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() // Close browser after tests are done so I'm not left with 40000 browsers.
     {
         getDriver().quit();
