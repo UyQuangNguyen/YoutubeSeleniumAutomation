@@ -26,8 +26,16 @@ public class GeneralAppearance extends WebsiteCore {
 
     @Test
     public void CheckIfLeftMenuClickable() {
-        GeneralMethods.sleep(3000);
         LeftMenu.navigate(LeftMenu.LeftMenuButton.TRENDING);
+        LeftMenu.navigate(LeftMenu.LeftMenuButton.HISTORY);
+        LeftMenu.navigate(LeftMenu.LeftMenuButton.MUSIC);
+        LeftMenu.navigate(LeftMenu.LeftMenuButton.SPORTS);
+        LeftMenu.navigate(LeftMenu.LeftMenuButton.GAMING);
+        LeftMenu.navigate(LeftMenu.LeftMenuButton.MOVIES);
+        LeftMenu.navigate(LeftMenu.LeftMenuButton.NEWS);
+        LeftMenu.navigate(LeftMenu.LeftMenuButton.LIVE);
+        LeftMenu.navigate(LeftMenu.LeftMenuButton.VIDEOS);
+
     }
 
 

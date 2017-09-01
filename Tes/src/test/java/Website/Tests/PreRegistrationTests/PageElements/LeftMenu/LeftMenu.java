@@ -1,14 +1,22 @@
 package Website.Tests.PreRegistrationTests.PageElements.LeftMenu;
 
 import Global.Helpers.GeneralMethods;
+import Website.WebsiteCore;
+import com.sun.tools.javah.Gen;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import sun.java2d.loops.FillRect;
 
-public class LeftMenu {
+public class LeftMenu extends WebsiteCore{
     // Unfortunately, by the way youtube is set up, we can only use xPath instead of css selectors for this menu
     public enum LeftMenuButton {HOME, TRENDING, HISTORY, MUSIC, SPORTS, GAMING, MOVIES, NEWS, LIVE, VIDEOS}
 
-    public static void navigate(LeftMenuButton leftMenuButton) {
+    @Override
+    public void basicWebclientSetup() {
+    }
+
+    public static void navigate (LeftMenuButton leftMenuButton) {
 
         String buttonCSS = null;
 
@@ -46,8 +54,10 @@ public class LeftMenu {
         }
 
         try {
-            System.out.println("TRYING OUR BEST");
             GeneralMethods.clickWithXpath(buttonCSS);
+            GeneralMethods.sleep(3000);
+
+
         }
         catch (TimeoutException ex){
 

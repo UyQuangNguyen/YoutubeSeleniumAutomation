@@ -4,8 +4,8 @@ import org.openqa.selenium.TimeoutException;
 
 public class LeftMenuCSS {
     // Unfortunately, by the way youtube is set up, we can only use xPath instead of css selectors for this menu
-    public static String HOME = "//*[contains(text(), 'Home')]";
-    public static String TRENDING = "//*[contains(text(), 'Trending')]";
+    public static String HOME = "//text()='Home')]";
+    public static String TRENDING = "./text()='hello'";
     public static String HISTORY = "//*[contains(text(), 'History')]";
     public static String MUSIC = "//*[contains(text(), 'Music')]";
     public static String SPORTS = "//*[contains(text(), 'Sports')]";
