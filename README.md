@@ -30,6 +30,9 @@ Run one of the testsuites
 ```
 
 ## Some previews of current tests made
+```
+Test functionality of youtubes left menu
+```
 ![Test functionality of youtubes left menu](https://im4.ezgif.com/tmp/ezgif-4-59170279d2.gif)
 
 ## Built With
