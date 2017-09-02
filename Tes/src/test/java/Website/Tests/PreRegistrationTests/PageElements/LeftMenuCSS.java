@@ -14,6 +14,7 @@ public class LeftMenuCSS {
     public static String NEWS = "//span[text()='News']";
     public static String LIVE = "//span[text()='Live']";
     public static String VIDEOS = "//span[text()='360° Video']";
+    public static String CONTEXTMENU = "div#sections";
 
 
 }

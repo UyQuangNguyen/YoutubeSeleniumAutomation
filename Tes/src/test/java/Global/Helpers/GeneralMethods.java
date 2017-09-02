@@ -115,6 +115,10 @@ public class GeneralMethods {
         }
     }
 
+    public static void waitUntilElementInvisible(String elementCSS, int duration) {
+        new WebDriverWait(Core.getDriver(), duration).until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(elementCSS)));
+    }
+
     public static WebElement waitForPresenceOfElementCSS(String elementCSS, int duration) {
         WebDriver driver = Core.getDriver();
 
