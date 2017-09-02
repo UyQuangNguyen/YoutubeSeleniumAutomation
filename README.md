@@ -15,6 +15,28 @@ This is a WIP. Only OSX with ChromeDriver is currently supported.
 ### Optional Requirements
 * IDE such as intellij or eclipse will make set-up of project much easier.
 
-## Easy. 
-* IDE such as intellij or eclipse will make set-up of project much easier.
+## Current steps to run the project
+```
+Clone the project
+```
+```
+Import project with intellij/eclipse
+```
+```
+Install dependencies through maven
+```
+```
+Run one of the testsuites
+```
 
+## Some previews of current tests made
+![Test functionality of youtubes left menu](https://gyazo.com/54eaceace49d294ff102ae0251baec9c.gif)
+
+## Built With
+
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [Selenium](https://github.com/SeleniumHQ/selenium) - Tools for web browser automation
+* [TestNG](https://github.com/SeleniumHQ/selenium) - Testing framework 
+
+## Authors
+* **Uy Nguyen** - [UyNG](https://github.com/UyNG)
