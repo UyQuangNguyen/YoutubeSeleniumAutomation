@@ -1,6 +1,6 @@
 package Website.Tests.PreRegistrationTests.Tests;
 
-import Global.Helpers.GeneralMethods;
+import Global.Helpers.WebDriverNavigation;
 import Website.Tests.PreRegistrationTests.PageElements.LeftMenu;
 import Website.Tests.PreRegistrationTests.PageElements.LeftMenuCSS;
 import Website.Tests.PreRegistrationTests.PageElements.TopMenu;
@@ -39,15 +39,15 @@ public class GeneralAppearance extends WebsiteCore {
 
     @Test(groups = "smokeBeforeReg")
     public void topMenuCheck() { // Check if LeftMenu elements are visible and usable
-        GeneralMethods.waitElementToBeVisibleCSS(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is there
+        WebDriverNavigation.waitElementToBeVisibleCSS(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is there
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.CONTEXTMENU),"Couldn't press the Contextmenu button");
-        GeneralMethods.sleep(1000);
+        WebDriverNavigation.sleep(1000);
         // Pressing the context menu makes it dissapear, so we have to check for that if the click did happen.
-        GeneralMethods.waitUntilElementInvisible(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is gone
-        GeneralMethods.sleep(1000);
+        WebDriverNavigation.waitUntilElementInvisible(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is gone
+        WebDriverNavigation.sleep(1000);
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.CONTEXTMENU),"Couldn't press the Contextmenu button");
-        GeneralMethods.sleep(1000);
-        GeneralMethods.waitElementToBeVisibleCSS(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is back
+        WebDriverNavigation.sleep(1000);
+        WebDriverNavigation.waitElementToBeVisibleCSS(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is back
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.YOUTUBELOGO),"Couldn't press the Youtube logo");
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.TOPSEARCH),"Couldn't press the Topsearch bar");
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.SEARCHBUTTON),"Couldn't press the Search button");

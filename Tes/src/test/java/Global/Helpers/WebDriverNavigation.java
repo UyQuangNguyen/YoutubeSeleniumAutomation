@@ -11,10 +11,10 @@ import org.testng.Assert;
  *  The methods are for example click by using css selector, or xpath, and we also have wait methods such as
  *  waiting for an element to be visible or invisible.
  */
-public class GeneralMethods {
+public class WebDriverNavigation {
 
     /**
-     * Attempts to find an element through csselector.
+     * Attempts to find an element through csȥselector.
      * If the element is found, it'll be hovered over and clicked.
      * If not clickable, we will scroll down to see if we can find it.
      * If not clickable after scrolling, it may not be presented on the page.
@@ -53,7 +53,7 @@ public class GeneralMethods {
     public static void clickWithXpath(String xpath) {
         try {
             WebDriver driver = Core.getDriver();
-            // GeneralMethods.waitForPresenceOfElement(cssSelector, 10); // GeneralMethods.waitElementToBeVisible(cssSelector, 10);
+            // WebDriverNavigation.waitForPresenceOfElement(cssSelector, 10); // WebDriverNavigation.waitElementToBeVisible(cssSelector, 10);
             WebElement elementToClick = driver.findElement(By.xpath(xpath));
             try {
                 //Attempts to click it

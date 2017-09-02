@@ -53,8 +53,8 @@ public class LeftMenu extends WebsiteCore{
         }
 
         try {
-            GeneralMethods.clickWithXpath(buttonCSS);
-            GeneralMethods.sleep(2000);
+            WebDriverNavigation.clickWithXpath(buttonCSS);
+            WebDriverNavigation.sleep(2000);
             return true;
 
         }

@@ -55,7 +55,7 @@ public class TopMenu extends WebsiteCore{
         }
 
         try {
-            GeneralMethods.clickWithCSS(buttonCSS);
+            WebDriverNavigation.clickWithCSS(buttonCSS);
             return true;
 
         }
