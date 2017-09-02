@@ -16,9 +16,10 @@ public class GeneralMethods {
             WebElement elementToClick = driver.findElement(By.cssSelector(cssSelector));
             try {
                 //Attempts to click it
-                elementToClick.click();
+                Actions action = new Actions(driver);
+                action.moveToElement(elementToClick).click().build().perform();
             } catch (Exception ex) {
-                //We scroll to it incase the exception was that it was out of sight..
+                //We scroll to it incase the exception was that it was out of siaht..
                 ((JavascriptExecutor) driver).executeScript(
                         "try{arguments[0].scrollIntoView(true);} catch(err){}", elementToClick);
                 elementToClick.click();

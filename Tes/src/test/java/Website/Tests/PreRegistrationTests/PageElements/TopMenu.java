@@ -55,7 +55,7 @@ public class TopMenu extends WebsiteCore{
         }
 
         try {
-            GeneralMethods.clickWithXpath(buttonCSS);
+            GeneralMethods.clickWithCSS(buttonCSS);
             return true;
 
         }
