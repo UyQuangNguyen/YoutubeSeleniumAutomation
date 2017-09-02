@@ -6,7 +6,8 @@ libraries enabling web browser automation. With the use of Selenium and ChromeDr
 
 ## Why WebDriver instead of Selenium IDE
 I only use WebDriver in this project.
-Selenium IDE is a Record and Playback tool, which is very easy to use, but it's very unreliable. Record and playback is typically a frowned upon in web applications. Since web applications are frequently changed, the IDE is not an ideal solution for a production environment, because of the maintenance nightmare that may arise. For a website such as YouTube which is under constant change, it's incredibly impractical to use in the long term. And also, programming in Java is much more fun (not sarcasm)
+Selenium IDE is a Record and Playback tool, which is very easy to use, but it's very unreliable. Record and playback is typically a frowned upon in web applications. Since web applications are frequently changed, the IDE is not an ideal solution for a production environment, because of the maintenance nightmare that may arise. For a website such as YouTube which is under constant change, it's incredibly impractical to use in the long term. Test cases such as verifying adding videos to playlist and then confirming number of videos etc, would be so so so tiresome in Selenium IDE.
+And also, programming in Java is much more fun (not sarcasm)
 
 
 ## Requirements
