@@ -2,8 +2,8 @@ package Website.Tests.PreRegistrationTests.PageElements;
 
 import Global.Helpers.WebDriverNavigation;
 import Website.WebsiteCore;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import sun.java2d.loops.FillRect;
 
@@ -63,6 +63,14 @@ public class TopMenu extends WebsiteCore{
             return false;
 
         }
+    }
+
+    public static void Search(String videoName) {
+        WebDriver driver = getDriver();
+        WebElement searchBar = driver.findElement(By.cssSelector(TopMenuCSS.TOPSEARCH));
+        searchBar.sendKeys(videoName);
+        searchBar.sendKeys(Keys.ENTER);
+
     }
 
 }

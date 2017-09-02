@@ -10,7 +10,7 @@
             </run>
         </groups>
         <classes>
-            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
+            <class name="Website.Tests.PreRegistrationTests.Tests.FrontPageTest" />
         </classes>
     </test>
 
@@ -21,7 +21,7 @@
             </run>
         </groups>
         <classes>
-            <class name="Website.Tests.PreRegistrationTests.Tests.GeneralAppearance" />
+            <class name="Website.Tests.PreRegistrationTests.Tests.FrontPageTest" />
         </classes>
     </test>
 

@@ -1,6 +1,6 @@
 package Website.Tests.PreRegistrationTests.PageElements;
 
-import Global.Helpers.GeneralMethods;
+import Global.Helpers.WebDriverNavigation;
 import Website.WebsiteCore;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;

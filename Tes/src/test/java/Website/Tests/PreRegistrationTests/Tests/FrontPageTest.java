@@ -52,6 +52,19 @@ public class FrontPageTest extends WebsiteCore {
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.UPLOADBUTTON),"Couldn't press the Upload button");
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.GRIDBUTTON),"Couldn't press the Grid button");
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.SETTINGS),"Couldn't press the Settings button");
+    }
+
+    /**
+     * This method will search for a random videos with a certain string, and check that the
+     * titles correspond to the search query.
+     * The random video will be fetched from a list of pre-generated videos or from the front page of YouTube.
+     * 
+     */
+
+    @Test(groups= "smokeBeforeReg")
+    public void searchForRandomVideo() {
+       
+        
 
     }
 
