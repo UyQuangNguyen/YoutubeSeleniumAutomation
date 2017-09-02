@@ -2,7 +2,6 @@ package Website.Tests.PreRegistrationTests.PageElements;
 
 import Global.Helpers.GeneralMethods;
 import Website.WebsiteCore;
-import com.sun.tools.javah.Gen;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
