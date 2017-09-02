@@ -5,15 +5,13 @@ import Website.Tests.PreRegistrationTests.PageElements.LeftMenu;
 import Website.Tests.PreRegistrationTests.PageElements.LeftMenuCSS;
 import Website.Tests.PreRegistrationTests.PageElements.TopMenu;
 import Website.WebsiteCore;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class GeneralAppearance extends WebsiteCore {
+public class FrontPageTest extends WebsiteCore {
 
     @Override
     @BeforeMethod(alwaysRun = true)
@@ -56,6 +54,8 @@ public class GeneralAppearance extends WebsiteCore {
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.SETTINGS),"Couldn't press the Settings button");
 
     }
+
+
 
 
 
