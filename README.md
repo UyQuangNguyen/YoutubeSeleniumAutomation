@@ -1,6 +1,8 @@
 Youtube Selenium Test Automation [![STATUS](https://img.shields.io/badge/Project-Work%20In%20Progress-red.svg)]
 ========
 Small home project to improve myself when it comes to selenium automation skills.
+This is a public repository for those who discover the repo and want to learn some testautomation too (incredibly fun and satisfying)
+
 Selenium is an umbrella project encapsulating a variety of tools and
 libraries enabling web browser automation. With the use of Selenium and WebDriver (chrome), I will automate the most of youtubes' public interface and check that the functions are usable. The automation test-cases will be derived from the requirement specifications. 
 
@@ -18,6 +20,7 @@ Creating code that is easy to maintain, robust, and easy to understand is the ch
 
 I will be following the idea of PageObjects design pattern  which is a concept that helps simplify test maintenence by creating layers of object whose responsibility is knowing how to interact with the test-object, leaving the tests the responbility of defining correct behaviour.  When the application changes, I'll only have to adjust few lines of codes, and not dozens or hundreds of test cases.
 More on the PageObject pattern can be read on  https://automatetheplanet.com/page-object-pattern/
+If you're new to testautomation, I also recommend you to start reading about the common pitfalls etc.
 
 ## Requirements
 This is a WIP. Only OSX with ChromeDriver is currently supported.
