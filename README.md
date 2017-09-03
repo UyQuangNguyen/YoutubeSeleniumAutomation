@@ -22,6 +22,8 @@ I will be following the idea of PageObjects design pattern  which is a concept t
 More on the PageObject pattern can be read on  https://automatetheplanet.com/page-object-pattern/
 If you're new to testautomation, I also recommend you to start reading about the common pitfalls etc.
 
+Adding breakpoints to an automated test, and going through the code line for line is also extremely helpful if you don't understand what each line do.
+
 ## Requirements
 This is a WIP. Only OSX with ChromeDriver is currently supported.
 * [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
