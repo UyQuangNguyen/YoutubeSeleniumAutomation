@@ -39,7 +39,7 @@ Run one of the testsuites
 ```
 Test functionality of youtubes left menu
 ```
-![Test functionality of youtubes left menu](https://im4.ezgif.com/tmp/ezgif-4-59170279d2.gif)
+![Test functionality of youtubes left menu](https://gyazo.com/54eaceace49d294ff102ae0251baec9c.gif)
 
 ## Built With
 
