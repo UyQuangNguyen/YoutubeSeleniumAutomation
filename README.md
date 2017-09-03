@@ -10,11 +10,21 @@ Selenium IDE is a Record and Playback tool, which is very easy to use, but it's 
 And also, programming in Java is much more fun (not sarcasm)
 
 
+## Learning basic testautomation & PageObject Pattern
+For those of you reading and using the code to learn basic testautomation in WebDriver, this is a great place to start.
+Like similar aspects of programming, it's not hard to get started, and you can start by just looking at some basic examples of
+using the driver to go to google.com and do a simple search. The main challenge of test automation lies in test engineering.
+Creating code that is easy to maintain, robust, and easy to understand is the challenge. 
+
+I will be following the idea of PageObjects design pattern  which is a concept that helps simplify test maintenence by creating layers of object whose responsibility is konwing how to interact with the test-object, leaving the tests the responbility of defining correct behaviour.  When the application changes, I'll only have to adjust few lines of codes, and not dozens or hundreds of test cases.
+More on the PageObject pattern can be read on  https://automatetheplanet.com/page-object-pattern/
+
 ## Requirements
 This is a WIP. Only OSX with ChromeDriver is currently supported.
 * [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * `java` and `jar` on the PATH
-* Selenium ChromeDriver must be installed beforehand (see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver)
+* Google Chrome
+* Selenium ChromeDriver (atleast v.3.5.1) must be installed beforehand (see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver)
 * The OS running must be OSX 10.9, 10.10 or 10.11.
 
 
