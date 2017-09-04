@@ -1,9 +1,17 @@
 package Global;
 import Website.WebsiteConstants;
+import com.sun.jna.platform.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class Core {
@@ -43,6 +51,22 @@ public class Core {
     public static WebDriver getDriver() {
 
         return threadDriver.get();
+    }
+
+    /**
+     *
+     * @param testResult The testresults
+     * takeScreenShotOnFailure will take a picture of the current state of chrome if a test fails (debugging benefits)
+     * The screenshot will be saved in the local folder.
+     */
+    @AfterMethod
+    public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
+        if (testResult.getStatus() == ITestResult.FAILURE) {
+            System.out.println(testResult.getStatus());
+            File scrFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+            org.apache.commons.io.FileUtils.copyFile(scrFile, new File("Error during run with test \\" + testResult.getName() + "-"
+                    + Arrays.toString(testResult.getParameters()) +  ".jpg"));
+        }
     }
 
     @AfterMethod(alwaysRun = true)
