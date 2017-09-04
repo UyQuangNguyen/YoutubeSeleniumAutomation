@@ -44,11 +44,31 @@ Clone the project
 Import project with intellij/eclipse
 ```
 ```
-Install dependencies through maven
+Install dependencies through maven, might take a while
 ```
 ```
-Run one of the testsuites
+Run one of the testsuites in XMLsuites folder
+
 ```
+
+### Set up allure for testoverview after suites have been run
+After executing whichever test suite in XMLsuite, allure can be set up for test overview which
+shows current failing and passed tests. Allure needs to be installed.
+
+```
+Open terminal/command line
+```
+```
+cd YoutubeSeleniumAutomation/Tes
+```
+```
+allure serve target/allure-results
+```
+
+End results will look something like this
+
+![Test functionality of youtubes left menu](https://i.gyazo.com/a8a0d9b479225ec51ecefc71fe48c947.png)
+
 
 ## Some previews of current tests made
 ```
