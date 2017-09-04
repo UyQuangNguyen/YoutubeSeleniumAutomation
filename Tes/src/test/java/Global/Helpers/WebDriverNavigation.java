@@ -25,16 +25,7 @@ public class WebDriverNavigation {
         try {
             WebDriver driver = Core.getDriver();
             WebElement elementToClick = driver.findElement(By.cssSelector(cssSelector));
-            try {
-                //Attempts to click it
-                Actions action = new Actions(driver);
-                action.moveToElement(elementToClick).click().build().perform();
-            } catch (Exception ex) {
-                //We scroll to it incase the exception was that it was out of siaht..
-                ((JavascriptExecutor) driver).executeScript(
-                        "try{arguments[0].scrollIntoView(true);} catch(err){}", elementToClick);
-                elementToClick.click();
-            }
+            click(elementToClick);
         } catch (Exception ex) {
             ex.printStackTrace();
             Assert.fail("The element is not clickable! This may be because it has not loaded yet, or is not present on the page.\n Control's CSS:" +
@@ -55,21 +46,26 @@ public class WebDriverNavigation {
             WebDriver driver = Core.getDriver();
             // WebDriverNavigation.waitForPresenceOfElement(cssSelector, 10); // WebDriverNavigation.waitElementToBeVisible(cssSelector, 10);
             WebElement elementToClick = driver.findElement(By.xpath(xpath));
-            try {
-                //Attempts to click it
-                Actions action = new Actions(driver);
-                action.moveToElement(elementToClick).click().build().perform();
-            } catch (Exception ex) {
-                //We scroll to it incase the exception was that it was out of sight..
-                ((JavascriptExecutor) driver).executeScript(
-                        "try{arguments[0].scrollIntoView(true);} catch(err){}", elementToClick);
-                elementToClick.click();
-            }
+            click(elementToClick);
         } catch (Exception ex) {
             ex.printStackTrace();
             Assert.fail("The element is not clickable! This may be because it has not loaded yet, or is not present on the page. \n Control's xpath:" +
                     xpath);
         }
+    }
+    public static void click(WebElement clickthis) {
+        WebDriver driver = Core.getDriver();
+        try {
+            //Attempts to click it
+            Actions action = new Actions(driver);
+            action.moveToElement(clickthis).click().build().perform();
+        } catch (Exception ex) {
+            //We scroll to it incase the exception was that it was out of siaht..
+            ((JavascriptExecutor) driver).executeScript(
+                    "try{arguments[0].scrollIntoView(true);} catch(err){}", clickthis);
+            clickthis.click();
+        }
+
     }
 
     /**

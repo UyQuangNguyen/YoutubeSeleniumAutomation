@@ -31,7 +31,7 @@ This is a WIP. Only OSX with ChromeDriver is currently supported.
 * Google Chrome
 * Selenium ChromeDriver (atleast v.3.5.1) must be installed beforehand (see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver)
 * The OS running must be OSX 10.9, 10.10 or 10.11.
-
+* Several of the tests depends on the YouTube API, which means that you’ll need your own youtube api key to the file “VideoJSONFactory.java”, there’s a placeholder there.
 
 ### Optional Requirements
 * IDE such as intellij or eclipse will make set-up of project much easier.
