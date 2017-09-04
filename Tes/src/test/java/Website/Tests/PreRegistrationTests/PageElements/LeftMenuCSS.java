@@ -1,7 +1,5 @@
 package Website.Tests.PreRegistrationTests.PageElements;
 
-import org.openqa.selenium.TimeoutException;
-
 public class LeftMenuCSS {
     // Unfortunately, by the way youtube is set up, we can only use xPath instead of css selectors for this menu
     public static String HOME = "//span[text()='Home']";

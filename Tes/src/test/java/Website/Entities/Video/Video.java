@@ -7,8 +7,6 @@ public class Video {
     public String uploader;
     public String amountOfViews;
     public String uploadDate;
-    public String description;
     public String category;
-
 
 }

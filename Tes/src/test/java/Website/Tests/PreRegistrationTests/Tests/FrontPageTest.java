@@ -17,15 +17,19 @@ public class FrontPageTest extends WebsiteCore {
     @BeforeMethod(alwaysRun = true)
     public void basicWebclientSetup() {
         WebDriver driver =  getDriver();
-        driver.manage().window().setSize(new Dimension(1920,1080));
         driver.get("https://www.youtube.com");
     }
 
     /**
-     * leftMenuCheck checks all of the leftmenu of mainpage in www.youtube.com
+     * leftMenuCheck checks all of the leftmenu of mainpage in www.youtube.com.
+     * It checks the functionality and that the elements are visible on the page.
+     * The resizing of the window is done to make sure that the context menu is available from start.
      */
     @Test(groups = "smokeBeforeReg")
     public void leftMenuCheck() { // Check if LeftMenu elements are visible and clickable.
+        WebDriver driver = getDriver();
+        Dimension dimension = new Dimension(1920, 1080);
+        driver.manage().window().setSize(dimension);
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.HOME),"Couldn't press the Home button");
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.TRENDING),"Couldn't press the Trending button");
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.HISTORY),"Couldn't press the History button");
@@ -38,8 +42,16 @@ public class FrontPageTest extends WebsiteCore {
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.VIDEOS),"Couldn't press the Videos button");
     }
 
+
+    /**
+     * topMenuCheck checks all of the topmenu of mainpage in www.youtube.com.
+     * It checks the functionality and that the elements are visible on the page.
+     */
     @Test(groups = "smokeBeforeReg")
     public void topMenuCheck() { // Check if LeftMenu elements are visible and usable
+        WebDriver driver = getDriver();
+        Dimension dimension = new Dimension(800, 600);
+        driver.manage().window().setSize(dimension);
         WebDriverNavigation.waitElementToBeVisibleCSS(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is there
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.CONTEXTMENU),"Couldn't press the Contextmenu button");
         WebDriverNavigation.sleep(1000);
