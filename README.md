@@ -1,7 +1,7 @@
 Youtube Selenium Test Automation [![STATUS](https://img.shields.io/badge/Project-Work%20In%20Progress-red.svg)]
 ========
 Small home project to improve myself when it comes to selenium automation skills.
-This is a public repository for those who discover the repo and want to learn some testautomation too (incredibly fun and satisfying)
+This is a public repository for those who discover the repo and want to learn some testautomation too (incredibly fun and satisfying). The code has ALOT of documentation in form of java doc which might seem excessive, but this is just to ensure that new readers will understand what’s going on. Also the green java doc text in intellij is pleasing to the eyes :)
 
 Selenium is an umbrella project encapsulating a variety of tools and
 libraries enabling web browser automation. With the use of Selenium and WebDriver (chrome), I will automate the most of youtubes' public interface and check that the functions are usable. The automation test-cases will be derived from the requirement specifications. 

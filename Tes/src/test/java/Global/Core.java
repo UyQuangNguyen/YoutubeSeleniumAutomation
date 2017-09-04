@@ -11,15 +11,24 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
-public class Core {
-    // Will always run first for tests that requires user to be signed in.
-    // Future goal is also to make driver global, so that we can grab it from anywhere ;)
 
+/**
+ *  This class is the superclass of all the tests. This ensures that all tests have the driver available,
+ *  and that they can call the driver from wherever. It contains methods that will always run for initiating the driver
+ *  and also contains teardown method and a method for taking screenshot when a test has finished and failed.
+ */
+public class Core {
     protected static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
 
+    /**
+     * The first method that runs regardless of test, and it's mandatory.
+     * It sets up chromedriver, and makes it easy for us later when we want to call it throughout the tests.
+     */
 
     @BeforeMethod(alwaysRun = true)
     public void globalSetup() {
@@ -32,13 +41,15 @@ public class Core {
                     getDriver().quit();
                 } catch (NullPointerException nullPtrEx)
                 {
-                    //If it wasn't properly started, it can't be quitted
                 }
                 threadDriver.remove();
             }
         }
     }
 
+    /**
+     * Sets the driver together with the desired settings.
+     */
     public static WebDriver setDriver() {
         WebDriver driver = null;
         driver = new ChromeDriver();
@@ -47,6 +58,10 @@ public class Core {
         driver.manage().deleteAllCookies();
         return driver;
     }
+
+    /**
+     * Returns the driver, can be called from basically all the tests that is set up (which is the main point of doing this)
+     */
 
     public static WebDriver getDriver() {
 
@@ -63,14 +78,19 @@ public class Core {
     public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
         if (testResult.getStatus() == ITestResult.FAILURE) {
             System.out.println(testResult.getStatus());
+            String timeStamp = new SimpleDateFormat("ddMMyyyy_ssmmHH").format(Calendar.getInstance().getTime());
             File scrFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
             org.apache.commons.io.FileUtils.copyFile(scrFile, new File("Error during run with test \\" + testResult.getName() + "-"
-                    + Arrays.toString(testResult.getParameters()) +  ".jpg"));
+                    + Arrays.toString(testResult.getParameters()) + timeStamp +  ".jpg"));
+
         }
     }
 
+    /**
+     * Teardown will close the browser after each test has been done, so that the user is not left with a million browsers.
+     */
     @AfterMethod(alwaysRun = true)
-    public void tearDown() // Close browser after tests are done so I'm not left with 40000 browsers.
+    public void tearDown()
     {
         getDriver().quit();
     }

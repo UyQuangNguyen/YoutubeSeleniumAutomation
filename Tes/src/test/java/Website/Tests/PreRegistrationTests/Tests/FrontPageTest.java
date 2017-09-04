@@ -21,6 +21,9 @@ public class FrontPageTest extends WebsiteCore {
         driver.get("https://www.youtube.com");
     }
 
+    /**
+     * leftMenuCheck checks all of the leftmenu of mainpage in www.youtube.com
+     */
     @Test(groups = "smokeBeforeReg")
     public void leftMenuCheck() { // Check if LeftMenu elements are visible and clickable.
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.HOME),"Couldn't press the Home button");
