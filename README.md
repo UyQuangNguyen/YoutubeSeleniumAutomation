@@ -80,8 +80,8 @@ Test functionality of youtubes left menu
 
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Selenium](https://github.com/SeleniumHQ/selenium) - Tools for web browser automation
-* [TestNG](https://github.com/SeleniumHQ/selenium) - Testing framework 
-* [Allure] (https://github.com/allure-framework/allure2) - Lightweight report tool 
+* [TestNG](https://github.com/SeleniumHQ/selenium) - Testing framework
+* [Allure](https://github.com/allure-framework/allure2) - Testing framework 
 
 ## Authors
 * **Uy Nguyen** - [UyNG](https://github.com/UyNG)
