@@ -27,9 +27,7 @@ public class FrontPageTest extends WebsiteCore {
      */
     @Test(groups = "smokeBeforeReg")
     public void leftMenuCheck() { // Check if LeftMenu elements are visible and clickable.
-        WebDriver driver = getDriver();
-        Dimension dimension = new Dimension(1920, 1080);
-        driver.manage().window().setSize(dimension);
+
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.HOME),"Couldn't press the Home button");
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.TRENDING),"Couldn't press the Trending button");
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.HISTORY),"Couldn't press the History button");
@@ -50,7 +48,7 @@ public class FrontPageTest extends WebsiteCore {
     @Test(groups = "smokeBeforeReg")
     public void topMenuCheck() { // Check if LeftMenu elements are visible and usable
         WebDriver driver = getDriver();
-        Dimension dimension = new Dimension(800, 600);
+        Dimension dimension = new Dimension(1920, 1080);
         driver.manage().window().setSize(dimension);
         WebDriverNavigation.waitElementToBeVisibleCSS(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is there
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.CONTEXTMENU),"Couldn't press the Contextmenu button");

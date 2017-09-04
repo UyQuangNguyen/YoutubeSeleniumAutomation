@@ -13,4 +13,30 @@
             <class name="Website.Tests.PreRegistrationTests.Tests.FrontPageTest" />
         </classes>
     </test>
+
+    <test name="smokeBeforeReg2">
+        <groups>
+            <run>
+                <include name="smokeBeforeReg" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Website.Tests.PreRegistrationTests.Tests.FrontPageTest" />
+        </classes>
+    </test>
+
+
+    <test name="smokeBeforeReg3">
+        <groups>
+            <run>
+                <include name="smokeBeforeReg" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Website.Tests.PreRegistrationTests.Tests.FrontPageTest" />
+        </classes>
+    </test>
+
+
+
 </suite>
