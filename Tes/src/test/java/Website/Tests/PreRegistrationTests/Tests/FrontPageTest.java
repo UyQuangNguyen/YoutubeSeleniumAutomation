@@ -1,6 +1,7 @@
 package Website.Tests.PreRegistrationTests.Tests;
 
 import Global.Helpers.WebDriverNavigation;
+import Website.Entities.Video.VideoJSONFactory;
 import Website.Tests.PreRegistrationTests.PageElements.LeftMenu;
 import Website.Tests.PreRegistrationTests.PageElements.LeftMenuCSS;
 import Website.Tests.PreRegistrationTests.PageElements.TopMenu;
@@ -79,12 +80,17 @@ public class FrontPageTest extends WebsiteCore {
 
     @Test(groups= "smokeBeforeReg")
     public void searchForRandomVideo() {
-       
+        VideoJSONFactory YoutubeVideoMaker = new VideoJSONFactory("http://freegeoip.net/json/");
 
-    }
+        try {
+        VideoJSONFactory.fetchYoutubeJsonObject();
+
+    } catch (Exception IOException) {
+
+        }
 
 
 
 
 
-}
+}}
