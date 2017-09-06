@@ -7,8 +7,10 @@ import Website.Tests.PreRegistrationTests.PageElements.LeftMenu;
 import Website.Tests.PreRegistrationTests.PageElements.LeftMenuCSS;
 import Website.Tests.PreRegistrationTests.PageElements.TopMenu;
 import Website.WebsiteCore;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -20,6 +22,8 @@ public class FrontPageTest extends WebsiteCore {
     public void basicWebclientSetup() {
         WebDriver driver =  getDriver();
         driver.get("https://www.youtube.com");
+        Dimension dimension = new Dimension(1920, 1080);
+        driver.manage().window().setSize(dimension);
     }
 
     /**
@@ -29,9 +33,6 @@ public class FrontPageTest extends WebsiteCore {
      */
     @Test(groups = "smokeBeforeReg")
     public void leftMenuCheck() { // Check if LeftMenu elements are visible and clickable.
-        WebDriver driver = getDriver();
-        Dimension dimension = new Dimension(1920, 1080);
-        driver.manage().window().setSize(dimension);
         WebDriverNavigation.waitElementToBeVisibleCSS(LeftMenuCSS.CONTEXTMENU,10);
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.HOME),"Couldn't press the Home button");
         Assert.assertTrue(LeftMenu.navigate(LeftMenu.LeftMenuButton.TRENDING),"Couldn't press the Trending button");
@@ -52,9 +53,6 @@ public class FrontPageTest extends WebsiteCore {
      */
     @Test(groups = "smokeBeforeReg")
     public void topMenuCheck() { // Check if LeftMenu elements are visible and usable
-        WebDriver driver = getDriver();
-        Dimension dimension = new Dimension(1920, 1080);
-        driver.manage().window().setSize(dimension);
         WebDriverNavigation.waitElementToBeVisibleCSS(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is there
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.CONTEXTMENU),"Couldn't press the Contextmenu button");
         WebDriverNavigation.sleep(1000);
@@ -73,27 +71,33 @@ public class FrontPageTest extends WebsiteCore {
     }
 
     /**
-     * This method will search for a random videos with a certain string, and check that the
-     * titles correspond to the search query.
-     * The random video will be fetched from a list of pre-generated videos or from the front page of YouTube.
-     * 
+     * This method is one of the biggest tests due to all the double-checking of correct video searched for.
+     * It will basically go to the main page, pick one of the trending videos visible on the screen, send the URL to YoutubeVideoMaker,
+     * create a video object based on the URL through the Youtube API. The test will then search exactly for the name of the
+     * video, check if one of the results matches the video object, and enter the matching one. The video object will
+     * then be used to cross reference everything on the screen to make sure the title, description, view count etc, matches.
+     * if it does, it shows that the search was successful.
      */
 
     @Test(groups= "smokeBeforeReg")
-    public void searchForRandomVideo() {
-        VideoJSONFactory YoutubeVideoMaker = new VideoJSONFactory("https://www.youtube.com/watch?v=AAeRZX6ann8");
+    public void searchForTrendingVideo() {
+        WebDriver driver =  getDriver();
+        WebElement videoRow = driver.findElement(By.cssSelector("div#contents div#contents div#items"));
+        WebElement videoFromRow = videoRow.findElement(By.cssSelector("ytd-grid-video-renderer.style-scope:nth-child(3) a#thumbnail"));
+        String idOfvideo = videoFromRow.getAttribute("href");
+
+        VideoJSONFactory YoutubeVideoMaker = new VideoJSONFactory(idOfvideo);
         Video video;
 
 
-        try {
+        try { // We create the video object and uses information from YouTubes API.
             video = YoutubeVideoMaker.convertYoutubeObjectToVideo();
-            System.out.println(video.amountOfViews);
-            System.out.println(video.title);
-
 
         } catch (Exception IOException) {
 
         }
+
+
 
 
 
