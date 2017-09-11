@@ -50,6 +50,7 @@ public class VideoJSONFactory {
         VideoListResponse listResponse = videoRequest.execute();
         List<com.google.api.services.youtube.model.Video> videoList = listResponse.getItems();
         com.google.api.services.youtube.model.Video targetVideo = videoList.iterator().next();
+        System.out.println(targetVideo.getContentDetails().getDuration());
 
         return new Website.Entities.Video.Video(targetVideo.getSnippet().getTitle(),targetVideo.getContentDetails().getDuration(),
                 sURL,targetVideo.getSnippet().getChannelId(),String.valueOf(targetVideo.getStatistics().getViewCount()),
