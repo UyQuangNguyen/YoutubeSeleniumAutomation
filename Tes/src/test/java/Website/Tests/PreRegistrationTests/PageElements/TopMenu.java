@@ -7,6 +7,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import sun.java2d.loops.FillRect;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TopMenu extends WebsiteCore{
     // Unfortunately, by the way youtube is set up, we can only use xPath instead of css selectors for this menu
     public enum TopMenuButton {CONTEXTMENU, YOUTUBELOGO, TOPSEARCH, SEARCHBUTTON, UPLOADBUTTON, GRIDBUTTON, SETTINGS}
@@ -65,11 +68,20 @@ public class TopMenu extends WebsiteCore{
         }
     }
 
-    public static void Search(String videoName) {
+    public static void search(String videoName) {
         WebDriver driver = getDriver();
         WebElement searchBar = driver.findElement(By.cssSelector(TopMenuCSS.TOPSEARCH));
         searchBar.sendKeys(videoName);
         searchBar.sendKeys(Keys.ENTER);
+
+    }
+
+    public static List<WebElement> returnSearchResults() {
+        WebDriver driver = getDriver();
+        List<WebElement> searchresults = new ArrayList<>();
+        searchresults = driver.findElements(By.cssSelector("ytd-video-renderer.style-scope"));
+        return searchresults;
+
 
     }
 

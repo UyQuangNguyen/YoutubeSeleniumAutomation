@@ -15,6 +15,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class FrontPageTest extends WebsiteCore {
 
     @Override
@@ -87,20 +89,31 @@ public class FrontPageTest extends WebsiteCore {
         String idOfvideo = videoFromRow.getAttribute("href");
 
         VideoJSONFactory YoutubeVideoMaker = new VideoJSONFactory(idOfvideo);
-        Video video;
+        Video video = null;
 
 
         try { // We create the video object and uses information from YouTubes API.
             video = YoutubeVideoMaker.convertYoutubeObjectToVideo();
 
         } catch (Exception IOException) {
+            System.out.println("Couldn't fetch anything from the API :(");
 
         }
 
+        TopMenu.search("'" + video.title + "'" );
+        List<WebElement> searchresult = TopMenu.returnSearchResults();
 
+        for (WebElement p : searchresult) {
+            if(p.findElement(By.cssSelector("a#thumbnail")).getAttribute("href").equals(video.url)) {
+                // Video found in search.
+                WebDriverNavigation.click(p);
+                WebDriverNavigation.sleep(10000);
+                break;
+            }
+        }
 
-
-
-
+        // We should be on video page now. Now we compare the values compared to the API.
+        System.out.println(video.returnTitlefromPage());
+        Assert.assertTrue(video.returnTitlefromPage().equals(video.title),"The titles does not match.");
 
 }}
