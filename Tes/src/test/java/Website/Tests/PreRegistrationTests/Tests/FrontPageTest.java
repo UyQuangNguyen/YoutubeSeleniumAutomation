@@ -1,5 +1,4 @@
 package Website.Tests.PreRegistrationTests.Tests;
-
 import Global.Helpers.WebDriverNavigation;
 import Website.Entities.Video.Video;
 import Website.Entities.Video.VideoJSONFactory;
@@ -14,8 +13,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.util.List;
+
+// TODO 1: edit searchForTrendingVideo, make it more readable and understandable.
 
 public class FrontPageTest extends WebsiteCore {
 
@@ -116,4 +116,12 @@ public class FrontPageTest extends WebsiteCore {
         System.out.println(video.returnTitlefromPage());
         Assert.assertTrue(video.returnTitlefromPage().equals(video.title),"The titles does not match.");
 
-}}
+}
+
+    @Test(groups = "smokeBeforeReg")
+    public void clickVideoFromFrontPage() {
+        WebDriver driver =  getDriver();
+
+    }
+
+}
