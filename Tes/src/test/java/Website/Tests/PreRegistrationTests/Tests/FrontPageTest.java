@@ -23,7 +23,7 @@ public class FrontPageTest extends WebsiteCore {
     @BeforeMethod(alwaysRun = true)
     public void basicWebclientSetup() {
         WebDriver driver =  getDriver();
-        driver.get("https://www.youtube.com");
+        driver.get("http://www.youtube.com");
         Dimension dimension = new Dimension(1920, 1080);
         driver.manage().window().setSize(dimension);
     }
@@ -55,6 +55,7 @@ public class FrontPageTest extends WebsiteCore {
      */
     @Test(groups = "smokeBeforeReg")
     public void topMenuCheck() { // Check if LeftMenu elements are visible and usable
+        WebDriver driver =  getDriver();
         WebDriverNavigation.waitElementToBeVisibleCSS(LeftMenuCSS.CONTEXTMENU,10); // Checks if contextmenu is there
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.CONTEXTMENU),"Couldn't press the Contextmenu button");
         WebDriverNavigation.sleep(1000);
@@ -68,6 +69,7 @@ public class FrontPageTest extends WebsiteCore {
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.TOPSEARCH),"Couldn't press the Topsearch bar");
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.SEARCHBUTTON),"Couldn't press the Search button");
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.UPLOADBUTTON),"Couldn't press the Upload button");
+        driver.navigate().back();
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.GRIDBUTTON),"Couldn't press the Grid button");
         Assert.assertTrue(TopMenu.navigate(TopMenu.TopMenuButton.SETTINGS),"Couldn't press the Settings button");
     }
@@ -122,6 +124,20 @@ public class FrontPageTest extends WebsiteCore {
     public void clickVideoFromFrontPage() {
         WebDriver driver =  getDriver();
 
-    }
+        // We fetch all the video rows on the frontpage such as Trending, humor or whatever the user has subscribed to
+        List<WebElement> videoRows = driver.findElements(By.cssSelector("div#contents div#contents div#items"));
+
+        // For all rows we click a random video in that row from 1-6.
+
+        for (WebElement p : videoRows) {
+            WebElement videoFromRow = p.findElement(By.cssSelector("ytd-grid-video-renderer.style-scope:nth-child(3) a#thumbnail"));
+            videoFromRow.click();
+            WebDriverNavigation.click(p);
+            WebDriverNavigation.sleep(10000);
+            driver.navigate().back();
+
+        }
+        }
+
 
 }

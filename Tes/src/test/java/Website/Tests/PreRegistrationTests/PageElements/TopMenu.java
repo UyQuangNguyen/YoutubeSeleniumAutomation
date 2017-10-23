@@ -2,10 +2,8 @@ package Website.Tests.PreRegistrationTests.PageElements;
 
 import Global.Helpers.WebDriverNavigation;
 import Website.WebsiteCore;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import sun.java2d.loops.FillRect;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,7 @@
 package Website.Entities.Video;
 import com.eclipsesource.json.JsonObject;
-import com.oracle.javafx.jmx.json.JSONException;
+import java.lang.Object;
+import org.json.JSONException;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.google.api.client.http.HttpRequest;
@@ -28,11 +29,7 @@ public class VideoJSONFactory {
         this.sURL = sURL;
         this.youtubeID = getYoutubeIDfromURL(sURL);
 
-        if(youtubeApiKey == "") {
-
-            this.youtubeApiKey = GetApiKey();
-
-        }
+        if(youtubeApiKey == "") this.youtubeApiKey = GetApiKey();
     }
 
     public static Website.Entities.Video.Video convertYoutubeObjectToVideo() throws IOException, JSONException {

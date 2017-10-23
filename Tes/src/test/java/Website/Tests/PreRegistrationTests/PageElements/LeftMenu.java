@@ -5,7 +5,6 @@ import Website.WebsiteCore;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import sun.java2d.loops.FillRect;
 
 public class LeftMenu extends WebsiteCore{
     // Unfortunately, by the way youtube is set up, we can only use xPath instead of css selectors for this menu
